@@ -1,4 +1,37 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-danger" role="status">
+<h2 class="text-center">RENK LİSTESİ</h2>
+<ul class="list-group">
+    <li 
+    [class]="getAllColorClass()"
+    routerLink="/cars"
+    >Tüm Ürünler</li>
+    <li 
+    (click)="setCurrentColor(color)"
+    routerLink="/cars/color/{{color.colorId}}"
+     *ngFor="let color of colors" 
+     [class]="getCurrentColorClass(color)">
+     {{color.colorName}}</li>
+  </ul>
+  
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-danger" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
 <table *ngIf="dataLoaded==true" class="table">
@@ -12,4 +45,4 @@
         <td>{{color.colorId}}</td>
         <td>{{color.colorName}}</td>
     </tr>
-</table>
+</table> -->

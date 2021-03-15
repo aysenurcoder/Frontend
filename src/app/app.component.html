@@ -1,23 +1,56 @@
- <div class="container">
+<div class="container">
+  <app-navi></app-navi>
+  <div class="row">
+    <div class="col-md-5">
+      <app-brand></app-brand>
+      <app-color></app-color>
+      <app-cardetail></app-cardetail>
+    <app-rentaldetail></app-rentaldetail>
+    <app-customer></app-customer>
+    </div>
+    <div class="col-md-7">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
   <app-navi></app-navi>
   <div class="row">
     <div class="col-md-3">
-      <div class="row">
-        <app-brand></app-brand>
-      </div>
-      <div class="row">
-        <app-color></app-color>
-      </div>
-      <div class="row">
-        <app-customer></app-customer>
-      </div>
-      <div class="row">
-        <app-rental></app-rental>
-      </div>
+      <div class="mt-3">
+      <app-brand></app-brand>
     </div>
-    <div class="col-md-9">
-      <app-car></app-car>
+    <div class="mt-3">
+      <app-color></app-color>
+    </div>
+    </div>
+    <div class="col-md-9 mt-3">
+      <app-cardetail></app-cardetail>
+      <app-rentaldetail></app-rentaldetail>
+      <app-customer></app-customer>
     </div>
   </div>
   <router-outlet></router-outlet>
-</div> 
+</div> -->
