@@ -2,28 +2,22 @@
     <span class="visually-hidden">Loading...</span>
 </div>
   
-  <h2 *ngIf="dataLoaded==true" class="text-center">Kiralama Detay Listesi</h2>
-  <table  class="table">
+  <h2 *ngIf="dataLoaded==true" class="text-center"><b><i>Kiralama Detay Listesi</i></b></h2>
+  <table  class="table table-success table-striped">
     <thead>
       <tr>
-        <th>Rental Id</th>
-        <th>Müşteri Id</th>
-        <th>Araba Id</th>
-        <th>Müşteri Adı</th>
-        <th>Müşteri Soyadı</th>
+        <th>Müşteri  Adı/Soyadı</th>
         <th>Marka Adı</th>
-        <th>Kiralama tarihi</th>
-        <th>Geri Teslim Tarihi</th>
+        <th>Şirket Adı</th>
+      <th>Aracı Alış Tarihi</th>
+      <th>Aracı Teslim Tarihi</th>
       </tr>
     </thead>
     <tr *ngFor="let rentaldetail of rentaldetails">
-      <td>{{ rentaldetail.rentalId }}</td>
-      <td>{{ rentaldetail.customerId }}</td>
-      <td>{{ rentaldetail.carId }}</td>
-      <td>{{ rentaldetail.firstName }}</td>            
-      <td>{{ rentaldetail.lastName }}</td>
+      <td>{{ rentaldetail.firstName + "/" + rentaldetail.lastName }}</td>            
       <td>{{ rentaldetail.brandName }}</td>
-      <td>{{ rentaldetail.rentDate }}</td>
-      <td>{{ rentaldetail.returnDate }}</td>
+      <td>{{rentaldetail.companyName}}</td>
+    <td>{{rentaldetail.rentDate}}</td>
+    <td>{{rentaldetail.returnDate}}</td>
     </tr>
   </table>

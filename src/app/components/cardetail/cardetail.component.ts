@@ -8,13 +8,15 @@ import { CardetailService } from 'src/app/services/cardetail.service';
   styleUrls: ['./cardetail.component.css'],
 })
 export class CardetailComponent implements OnInit {
-  cardetails: Cardetail[]=[];
+  cardetails:Cardetail[] = [];
   dataLoaded = false;
   constructor(private cardetailService: CardetailService) {}
 
   ngOnInit(): void {
     this.getCardetails();
+
   }
+
   getCardetails() {
     this.cardetailService.getCarDetails().subscribe((response) => {
       this.cardetails = response.data;
