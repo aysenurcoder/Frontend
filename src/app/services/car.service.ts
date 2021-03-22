@@ -33,6 +33,13 @@ export class CarService {
     return this.httpClient.get<ListResponseModel<Cardetail>>(newPath)
    
   }
+
+  getCarDetailsByCarId(carId:number){
+    let newPath = this.apiUrl + "cars/getcardetailsbycarid?carid=" + carId;
+    return this.httpClient
+      .get<ListResponseModel<Cardetail>>(newPath);
+  }
+
   
 }
 

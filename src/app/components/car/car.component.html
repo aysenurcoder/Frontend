@@ -45,10 +45,10 @@
         <td>{{car.imagePath}}</td>
     </tr>
 </table>   -->
-
-<div *ngIf="!dataLoaded" class="spinner-border" role="status">
+<h2 class="text-center"><b><i>Araç Detay Listesi</i></b></h2>
+ <div *ngIf="!dataLoaded" class="spinner-border" role="status">
   <span class="visually-hidden">Loading...</span>
-</div>
+</div> 
 <div class="row-md-3"></div>
 <div
   class="d-flex flex-wrap justify-content-center justify-content-xl-start"
@@ -56,7 +56,7 @@
   >
   <div *ngFor="let car of cars" class="card" style="width: 18rem;">
     <div class="d-flex" style="height: 45%">
-      <img src="{{car.imagePath}}" class="card-img-top" alt="">
+      <img src="https://localhost:44362/{{car.imagePath}}" class="card-img-top" alt="">
     </div>
       <div class="card-body">
         <h5 class="card-title text-center">{{car.carId}}</h5>
@@ -71,4 +71,4 @@
         <button type="button" routerLink = "/cardetails/{{car.carId}}" class="btn btn-dark text-center">Ayrıntılar</button>
       </div>
     </div>
-</div>
+</div>    

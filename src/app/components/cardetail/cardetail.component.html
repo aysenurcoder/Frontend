@@ -1,5 +1,5 @@
 
-<div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
+<!-- <div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
   
@@ -10,6 +10,9 @@
       <th>Id</th>
       <th>Renk</th>
       <th>Marka</th>
+      <th>Model Year</th>
+      <th>Ücret</th>
+      <th>Açıklama</th>
     </tr>
   </thead>
   <tr *ngFor="let cardetail of cardetails">
@@ -19,4 +22,29 @@
     <td>{{cardetail.modelYear}}</td>
     <td>{{ cardetail.dailyPrice }}</td>
     <td>{{ cardetail.description}}</td>
-</table> 
+</table>  -->
+
+<div class="card mb-3">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let carimage of carimages;first as firstImage" class="carousel-item"[ngClass]="{active :firstImage}">
+        <img src="https://localhost:44362/{{carimage.imagePath}}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{car.brandName}}</h5> 
+    <p class="card-text">{{car.colorName}}</p>
+    <p class="card-text">{{car.modelYear}}</p>
+    <p class="card-text">{{car.dailyPrice}}</p>
+    <p class="card-text">{{car.description}}</p>
+  </div>
+</div>

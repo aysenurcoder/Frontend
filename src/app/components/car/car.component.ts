@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router';
 import { Cardetail } from 'src/app/models/cardetail';
+import { CarImage } from 'src/app/models/carimage';
 import { CarService } from 'src/app/services/car.service';
 import { CarimageService } from 'src/app/services/carimage.service';
 
@@ -12,6 +13,7 @@ import { CarimageService } from 'src/app/services/carimage.service';
 export class CarComponent implements OnInit {
 
   cars:Cardetail[] = [];
+  carImages: CarImage[]=[];
   dataLoaded = false;
 
 
@@ -39,6 +41,12 @@ export class CarComponent implements OnInit {
     })
   }
 
+  getCarImages(){
+    this.carImageService.getCarImages().subscribe((response) => {
+      this.carImages = response.data;
+    });
+  }
+
   getCarDetailsByBrand(brandId:number){
     this.carService.getCarDetailsByBrand(brandId).subscribe((response)=>{
       this.cars = response.data;
@@ -58,17 +66,10 @@ export class CarComponent implements OnInit {
   setCarsPreviewImage(cars:Cardetail[]){
     cars.forEach(car => {
       this.carImageService.getCarImagesByCarId(car.carId).subscribe(response=>{
-        car.imagePath = "http://localhost:4200/" + response.data[0].imagePath;
+        car.imagePath = response.data[0].imagePath;
       })
     });
   }
      
   
 }
-// setCarsPreviewImage(cars:Cardetail[]){
-//   cars.forEach(car => {
-//     this.carImageService.getCarImagesByCarId(car.carId).subscribe(response=>{
-//       car.imagePath = response.data[0].imagePath
-//     })
-//   });
-// }
