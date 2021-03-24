@@ -41,10 +41,10 @@
     </button>
   </div>
   <div class="card-body">
-    <h5 class="card-title">{{car.brandName}}</h5> 
+    <h5 class="card-title">{{car.brandName |uppercase}}</h5> 
     <p class="card-text">{{car.colorName}}</p>
     <p class="card-text">{{car.modelYear}}</p>
-    <p class="card-text">{{car.dailyPrice}}</p>
+    <p class="card-text">{{car.dailyPrice | currency: "TRY":"symbol-narrow"}}</p>
     <p class="card-text">{{car.description}}</p>
   </div>
 </div>
